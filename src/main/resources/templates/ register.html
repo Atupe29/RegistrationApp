@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" xmlns="https://www.thymeleaf.org">
+	<title>User Registrtaion Form</title>
+    <style>
+		body {
+    font-family: Arial, sans-serif;
+    background-image:url();
+    
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    width: 100%;
+    }
+    .button {
+            font-size: 1em;
+            padding: 10px;
+            color: #fff;
+            border: 2px solid rgb(6, 214, 160);
+            border-radius: 20px/50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+            background: rgb(0, 255, 64);
+        }
+        .button:hover {
+            background: #009372;
+        }
+         .register-btn {
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+        }
+        
+		
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center; color: red">User Registration Form</h1>
+    <form class="col-5" th:action="@{/registerUser}" th:object="${user}" method="post"
+        <label for="name"><b>Name:</b></label><br>
+        <input type="text" th:field="*{name}"  id="name" placeholder="Enter Name" name="name"><br>
+        
+     
+         <label for="email"><b>Email:</b></label><br>
+        <input type="email" th:field="*{email}" id="email" placeholder="Enter Email" name="email"><br>
+       
+        <label for="phone"><b>Phone:</b></label><br>
+        <input type="tel" th:field="*{phone}" id="phone" placeholder="Enter Phone" name="phone"><br>
+        
+        <label for="password"><b>Password: </b></label><br>
+        <input type="password" th:field="*{password}" id="password" placeholder="Enter Password" name="password"><br>
+        
+        <label for="confirm_password"><b>Confirm Password:</b></label><br>
+         <input type="password" th:field="*{cpassword}" id="confirm_password" placeholder="Enter Confirm Password" name="confirm_password"><br>
+       
+       
+        <label for="gender" class="form label"><b>Gender:</b></label>
+        
+       
+       <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox"  name="gender" id="inlineCheckbox1"  value="male">
+  <label class="form-check-label" for="inlineCheckbox1">Male</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="gender" id="inlineCheckbox2" value="female">
+  <label class="form-check-label" for="inlineCheckbox2">female</label><br
+
+       </div>      
+        <button type="submit"  class="button register-btn">Register</button>
+    </form>
+</body>
+</html>
